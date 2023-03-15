@@ -18,3 +18,34 @@ nvim_lsp.tsserver.setup {
     on_attach = on_attach,
     settings = {documentFormatting = true}
 }
+
+nvim_lsp.lua_ls.setup{}
+
+--PHP
+nvim_lsp.intelephense.setup({
+    settings = {
+        intelephense = {
+            stubs = {
+                "bcmath",
+                "bz2",
+                "calendar",
+                "Core",
+                "curl",
+                "zip",
+                "zlib",
+                "wordpress",
+                "woocommerce",
+                "acf-pro",
+                "wordpress-globals",
+                "wp-cli",
+                "genesis",
+                "polylang"
+            },
+            environment = {
+              includePaths = '/home/ueslei/.config/composer/vendor/php-stubs/'},
+            files = {
+                maxSize = 5000000;
+            };
+        };
+    }
+});
