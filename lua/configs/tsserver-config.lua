@@ -1,4 +1,4 @@
-  -- LSPCONFIG'S
+  --[[ LSPCONFIG'S
   local status, nvim_lsp = pcall(require, "lspconfig")
   if (not status) then return end
 
@@ -20,3 +20,11 @@ nvim_lsp.tsserver.setup {
     filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
     cmd = { "typescript-language-server", "--stdio" }
 } 
+
+
+  ----
+lspconfig.tsserver.setup {
+    root_dir = lspconfig.util.root_pattern("yarn.lock", "lerna.json", ".git"),
+    on_attach = on_attach,
+    settings = {documentFormatting = true}
+} --]]
